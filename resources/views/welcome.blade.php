@@ -13,6 +13,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script type="text/javascript">
+        var base_url = "{{ url('/') . '/' }}";
+    </script>
 </head>
 <body>
     <div id="app">

@@ -18,3 +18,5 @@ Route::get('/{any?}', [
         return view('welcome');
     }
 ])->where('any', '.*');
+
+Route::get('export-product-csv', 'ProductController@csv');

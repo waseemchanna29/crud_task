@@ -48,14 +48,14 @@ __webpack_require__.r(__webpack_exports__);
     addProduct: function addProduct() {
       var _this = this;
 
-      this.axios.post('http://localhost:8000/api/products', this.product).then(function (response) {
+      this.axios.post(base_url + 'api/products', this.product).then(function (response) {
         return _this.$router.push({
           name: 'home'
         });
       })["catch"](function (err) {
         return console.log(err);
       })["finally"](function () {
-        return _this.loading = false;
+        return _this.loadin = false;
       });
     }
   }
@@ -172,26 +172,30 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.product.name,
-                      expression: "product.name"
+                      value: _vm.product.product_title,
+                      expression: "product.product_title"
                     }
                   ],
                   staticClass: "form-control",
                   attrs: { type: "text" },
-                  domProps: { value: _vm.product.name },
+                  domProps: { value: _vm.product.product_title },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.$set(_vm.product, "name", $event.target.value)
+                      _vm.$set(
+                        _vm.product,
+                        "product_title",
+                        $event.target.value
+                      )
                     }
                   }
                 })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
-                _c("label", [_vm._v("descrption")]),
+                _c("label", [_vm._v("Description")]),
                 _vm._v(" "),
                 _c("input", {
                   directives: [

@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('api')->group(function () {
     Route::resource('products', 'ProductController');
+    Route::get('export-product-csv', 'ProductController@getCsv');
 });
